@@ -26,6 +26,11 @@ export default function SignInScreen({ setToken }) {
             );
             console.log(response.data);
             setData(response.data);
+            if (response.data.error === "Unauthorised") {
+              alert("Veuiller vous inscrire");
+            } else {
+              alert("Vous êtes connecté");
+            }
           }}
         />
         <TouchableOpacity
